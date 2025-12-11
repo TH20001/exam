@@ -1,0 +1,32 @@
+﻿@model IEnumerable<finalProject.Models.Junk>
+@{
+    ViewData["Title"] = "Inventory Report";
+}
+
+<h1>Inventory Report</h1>
+
+<p>Total Products: <strong>@ViewData["ProductCount"]</strong></p>
+<p>Total Inventory Value: <strong>@ViewData["TotalValue"]</strong></p>
+
+<h1>I don't know what im doing here '</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Price * item.Quantity)</td>
+            </tr>
+        }
+    </tbody>
+</table>
