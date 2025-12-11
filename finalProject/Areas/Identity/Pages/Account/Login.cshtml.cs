@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
-// using Microsoft.AspNetCore.Identity.UI.Services;  // removed — not needed
+// using Microsoft.AspNetCore.Identity.UI.Services; is this giving me issues idk why
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -93,6 +93,8 @@ namespace finalProject.Areas.Identity.Pages.Account
             ReturnUrl = returnUrl;
         }
 
+        // for later remove the dam email issue and reg issue and figure out 
+        // what the hell we did wrong 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");

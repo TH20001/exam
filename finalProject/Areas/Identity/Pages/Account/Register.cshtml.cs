@@ -30,6 +30,9 @@ namespace finalProject.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         // private readonly IEmailSender _emailSender;   // removed completely
 
+        // I DONT KNOW WHY I WAS GETTING ERRORS IN THIS FILE
+        // BUT I HATE ROLE BASED ACCESS SOMETIMES
+        // SO I HAD TO GUT ALOT OF THE FILE AND JUST HOPE I FIXED ISSUES IN IT 
         public RegisterModel(
             UserManager<IdentityUser> userManager,
             IUserStore<IdentityUser> userStore,

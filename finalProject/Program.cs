@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace finalProject
 {
+
+
+    // i hate making builder files
     public class Program
     {
         public static async Task Main(string[] args)
@@ -18,12 +21,10 @@ namespace finalProject
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            // Identity setup (no email confirmation)
             builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            // Optional: Relax password rules to match your Register.cshtml
             builder.Services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = true;
@@ -53,7 +54,6 @@ namespace finalProject
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
                 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
 
-                // Create roles
                 string[] roles = { "Admin", "Customer" };
 
                 foreach (var role in roles)
